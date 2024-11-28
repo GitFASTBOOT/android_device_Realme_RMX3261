@@ -26,17 +26,14 @@ $(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 # Enable virtual A/B OTA
 $(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
-# Inherit some common twrp stuff.
-$(call inherit-product-if-exists, vendor/twrp/config/common.mk)
-
-# Inherit some common pb stuff.
-$(call inherit-product-if-exists, vendor/pb/config/common.mk)
+# Inherit some common lineage stuff.
+$(call inherit-product, vendor/lineage/config/common.mk)
 
 # Inherit from RMX3261 device
 $(call inherit-product, device/realme/RMX3261/device.mk)
 
 PRODUCT_DEVICE := RMX3261
-PRODUCT_NAME := twrp_RMX3261
+PRODUCT_NAME := lineage_RMX3261
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := RMX3261
 PRODUCT_MANUFACTURER := realme
