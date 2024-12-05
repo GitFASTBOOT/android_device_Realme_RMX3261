@@ -34,10 +34,6 @@ on property:vendor.sys.listener.registered=true
     start keymaster-4-1
     start gatekeeper-1-0
 
-
-on property:crypto.ready=1 && property:ro.crypto.state=encrypted
-    install_keyring
-
 on property:crypto.ready=1 && property:hwservicemanager.ready=true
     start keymaster-4-1
     start gatekeeper-1-0
