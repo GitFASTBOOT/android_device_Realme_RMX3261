@@ -1,6 +1,8 @@
 #add for board init.rc for recovery mode
 import /init.recovery.common.rc
 
+export LD_LIBRARY_PATH /system/lib64:/vendor/lib64
+
 on fs
     start prepdecrypt 
 
