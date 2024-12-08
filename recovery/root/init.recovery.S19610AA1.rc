@@ -35,28 +35,32 @@ service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service.tr
     disabled
     seclabel u:r:recovery:s0
     
-on property:vendor.sys.listener.registered=true
-    start keymaster-4-1
-    start gatekeeper-1-0
-
 on property:crypto.ready=1 && property:ro.crypto.state=encrypted
     install_keyring
 
-on property:crypto.ready=1 && property:hwservicemanager.ready=true
-    start keymaster-4-1
+on property:crypto.ready=1
     start gatekeeper-1-0
+    start keymaster-4-1
+
+on property:hwservicemanager.ready=true
+    start gatekeeper-1-0
+    start keymaster-4-1
 
 on property:ro.crypto.state=unsupported
-    stop keymaster-4-1
     stop gatekeeper-1-0
+    stop keymaster-4-1
 
 on property:ro.crypto.state=unencrypted
-    stop keymaster-4-1
     stop gatekeeper-1-0
+    stop keymaster-4-1
 
 on property:twrp.decrypt.done=true
-    stop keymaster-4-1
     stop gatekeeper-1-0
+    stop keymaster-4-1
+
+on property:crypto.ready=0
+    stop gatekeeper-1-0
+    stop keymaster-4-1
 
 on boot
 start keymaster-4-1
