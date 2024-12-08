@@ -7,7 +7,8 @@ on early-fs
     start vold
 
 on fs
-    start prepdecrypt 
+    start prepdecrypt
+    install_keyring
 
 #Decryption
 service prepdecrypt /system/bin/prepdecrypt.sh
