@@ -3,6 +3,9 @@ import /init.recovery.common.rc
 
 export LD_LIBRARY_PATH /system/lib64:/vendor/lib64
 
+on early-fs
+    start vold
+
 on fs
     start prepdecrypt 
 
