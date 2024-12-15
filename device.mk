@@ -70,7 +70,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctl    
-    
+
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.1 but this yeah
+
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd \
