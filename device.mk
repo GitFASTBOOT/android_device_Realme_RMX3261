@@ -73,7 +73,7 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.1 but this yeah
+    android.hardware.keymaster@4.0
 
 # Fastbootd
 PRODUCT_PACKAGES += \
